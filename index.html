@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Cálculo IMC</title>
+
+    <script type="text/javascript">
+        function calcularImc(){
+            var formulario = document.getElementById("formulario")
+
+            var peso = +formulario.peso.value
+            var altura = +formulario.altura.value
+
+            var imc = (peso / ((altura / 100) * (altura / 100)))
+
+            formulario.imc.value = imc.toFixed(2)
+            console.log(imc)
+        }
+    </script>
+
+</head>
+<body>
+    <form id="formulario" class="text-center">
+        <fieldset>
+            <label for="peso">Peso(Kg):</label><br>
+            <input type="number" name="peso">
+            <br>
+            <label for="altura">Altura(cm)</label><br>
+            <input type="number" name="altura">
+            <br>
+            <label for="imc">imc:</label>
+            <br>
+            <input name="imc" type="text" disabled="disabled" />
+            <br>
+            <a href="#" onclick="calcularImc();">Calcular</a>
+        </fieldset>
+    </form>
+</body>
+</html>
+
+<style>
+    body{
+        padding: 50px;
+    }
+
+    #formulario{
+        margin: 0 auto;
+        max-width: 400px;
+    }
+</style>
